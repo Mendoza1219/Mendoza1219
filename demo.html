@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 28px;
+        }
+        a{
+            display: block;
+            margin-bottom: 10px;
+        }
+        #parentElement, #childElement{
+            border: 1px solid #ccc;
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com" id="link">Click this link</a>
+
+    <div id="parentElement">
+        <p>Click parentElement</p>
+        <div id="childElement">
+            <p>Click childElement</p>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#parentElement").click(function(){
+                $("#childElement").animate({
+                    width: "100px"
+                }, 2000,ShowDone);
+            });
+            
+           
+        });
+        function ShowDone(){
+            
+            $("#parentElement").animate({
+                    width: "300px"
+                }, 2000);
+                
+        }
+
+
+    </script>
+    
+</body>
+</html>
